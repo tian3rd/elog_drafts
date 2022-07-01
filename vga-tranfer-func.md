@@ -65,6 +65,29 @@ I forgot to connect the three wires to the filters in the channel. According to 
 1. Connect the three wires to provide a high voltage for the filter stages, so that they are bypassed, and the expected outcome would not show any rolloff at higher frequency.
 2. Test the other channels and provide the high voltages for the filter stages to bypass the filters. And if the bypassing is successful, we don't need to solder the `C5` part with the wire based on the schematic.
 
-### Updates
+## Updates
 
-1. [30/06/2022] Connect the three wires to the filters, and test the
+### [30/06/2022] Results
+
+1. Connect the three wires to the filters, and test the transfer functions.
+   1. 0dB ![0dB no filters](https://cdn-std.droplr.net/files/acc_498334/oBFAf7)
+   2. 21dB ![21dB no filters](https://cdn-std.droplr.net/files/acc_498334/AkfbDY)
+2. Turn on the filters, and test the transfer functions.
+   1. Gain is set to 0dB
+      1. Turn on 1st filter ![0dB 1st filter](https://cdn-std.droplr.net/files/acc_498334/9WSwc9)
+      2. Turn on 1st & 2nd filters ![0dB 1st & 2nd filters](https://cdn-std.droplr.net/files/acc_498334/cRJ9WK)
+      3. Turn on all filters ![0dB all filters](https://cdn-std.droplr.net/files/acc_498334/JGR4oP)
+   2. Gain is set to 21dB
+      1. Turn on 1st filter ![21dB 1st filter](https://cdn-std.droplr.net/files/acc_498334/8fetsP)
+      2. Turn on 1st & 2nd filters ![21dB 1st & 2nd filters](https://cdn-std.droplr.net/files/acc_498334/l2d0Zr)
+3. Switch to the next channel to test the transfer functions. Since the `C5` part is disconnected, I didn't test the filters.
+   1. Channel B 0dB ![0dB channel B](https://cdn-std.droplr.net/files/acc_498334/zNun1D)
+   2. Channel B 12dB ![12dB channel B](https://cdn-std.droplr.net/files/acc_498334/5xghX8)
+
+### [30/06/2022] Analysis
+
+1. The rolloff is universal in each transfer function even when the gain and filter stages are bypassed.
+2. When `C5` is shorted, the filters act like gains, and the schematics are quite similiar.
+3. The differential receiver and differential driver can be the cause of the 10k rolloff. Need to find a way to test them with oscilloscope separately.
+   1. To start with, maybe test the output from `TP1` and GND to see if the differential receiver is causing the rolloff. Note: make sure all gain and filter stages are bypassed.
+   2. Similar for the differential driver, test the output from `TP7` and `TP9`.
