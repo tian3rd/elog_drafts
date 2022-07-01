@@ -91,3 +91,15 @@ I forgot to connect the three wires to the filters in the channel. According to 
 3. The differential receiver and differential driver can be the cause of the 10k rolloff. Need to find a way to test them with oscilloscope separately.
    1. To start with, maybe test the output from `TP1` and GND to see if the differential receiver is causing the rolloff. Note: make sure all gain and filter stages are bypassed.
    2. Similar for the differential driver, test the output from `TP7` and `TP9`.
+
+### [01/07/2022] Results
+
+1. Still channel B with 0dB, but the analog output is connected to test point 14 (`TP14`) and `TP9` (GND). This part is to test if there's a rolloff just from the differential receiver part of the circuit.
+
+![0dB channel B tp14 tp9](https://cdn-std.droplr.net/files/acc_498334/3OFBoe)
+
+We can see that the rolloff still exists and it is at around 10kHz.
+
+### [01/07/2022] Analysis
+
+![differential receiver shematic](https://cdn-std.droplr.net/files/acc_498334/dV2Vbu)
