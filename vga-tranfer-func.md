@@ -103,3 +103,18 @@ We can see that the rolloff still exists and it is at around 10kHz.
 ### [01/07/2022] Analysis
 
 ![differential receiver shematic](https://cdn-std.droplr.net/files/acc_498334/dV2Vbu)
+
+### [07/07/2022] Results of the Noises
+
+Noise at test points `TP14` (after the differential receiver).
+
+1. `SR785` spectrum analyzer is used to measure the noise, (since `AD2` has an internal noise floor that's higher than the measured components, so it's not used here).
+
+![noise at tp14 measured by sr785](https://cdn-std.droplr.net/files/acc_498334/2wMql4)
+
+Frequency range: 0 - 1kHz
+Typical noise: 25 nVrms/sqrt(Hz), averaging around 30 nVrms/sqrt(Hz) in the range
+
+### [07/07/2022] Analysis
+
+It's consistent with the [datasheet of the op amp LT1125CS](https://www.analog.com/media/en/technical-documentation/data-sheets/11245ff.pdf) (2.7 nV/sqrt(Hz) typical) which is the main part of the differential receiver. Due to the interference of other components on the board, a magnitude higher is normal, and the value is acceptable for the our purpose in using VGA board.
